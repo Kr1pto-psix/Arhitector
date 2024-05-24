@@ -3,15 +3,18 @@
 Item Window::getCurrentItem() {
 	return this->currentItem;
 }
-void Window::setCurrentItem(Item item) {
+
+vector<Item> Window::getItems()
+{
+	return this->items;
+}
+
+void Window::addItem(Item item)
+{
+	this->items.push_back(item);
+}
+
+void Window::setCurrentItem(Item item)
+{
 	this->currentItem = item;
 }
-void Window::DrawToConsole() {
-	std::cout << "CurrentItem:" <<  currentItem.ToString() << std::endl;
-	std::cout << "-----------------------------------------------------------" << std::endl;
-	for (int i(0); i < 2;i++) {
-		std::cout << "[" << i << "]" << " item: " << this->items[i].ToString() << std::endl;
-	}
-
-}
-

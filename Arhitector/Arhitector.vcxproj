@@ -127,17 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Printer.cpp" />
     <ClCompile Include="src\item.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Menu.cpp" />
-    <ClCompile Include="src\Progrmas.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includs\item.h" />
-    <ClInclude Include="includs\Progrmas.h" />
     <ClInclude Include="includs\Window.h" />
-    <ClInclude Include="src\Menu.h" />
+    <ClInclude Include="src\Printer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

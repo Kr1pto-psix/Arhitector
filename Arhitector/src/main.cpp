@@ -1,42 +1,22 @@
 #include<iostream>
-#include "../includs/Progrmas.h"
-#include "Menu.h"
-#include <list>
-#include<assert.h>
-#include <functional>
-#include<Windows.h>
+#include "./../includs/Window.h"
+#include "Printer.h"
 using namespace ::std;
 
-class Event {
-public:
-    void addListener(std::function<void()   > callback) {
-        listeners.push_back(callback);
-    }
 
-    void fire() {
-        for (auto listener : listeners) {
-            listener();
-        }
-    }
-
-private:
-    std::vector<std::function<void()>> listeners;
-};
-
-void myFunction() {
-    std::cout << "ok button press" << endl;
-}
 
 int main() {
     setlocale(0, "ru");
-    Event event;
-    event.addListener(myFunction);
-    while (true) {
-        if (GetAsyncKeyState(VK_CONTROL)) {
-            event.fire();
-        }
-    }
-    
+    Window win;
+    Item item6("cmd", "это иконка cmd", "cmd.exe");
+    Item item5("flipper zero", "это иконка cmd", "cmd.exe");
+    Item item4("tshark", "это иконка cmd", "cmd.exe");
+    Item item3("vendeta", "это иконка cmd", "cmd.exe");
+    win.addItem(item3);
+    win.addItem(item4);
+    win.addItem(item5);
+    win.addItem(item6);
+    Printer::DrawToDisplay(win);
     
 
     
